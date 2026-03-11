@@ -5,6 +5,7 @@ Nesse projeto é efetuado a coleta, o armazenamento e o processamento de dados d
 ## Etapas do projeto
 - [Coleta](#coleta)
 - [Camada Bronze](#camada-bronze)
+- [Camada Silver](#camada-silver)
 
 <img src="./img/arquitetura.png">
 
@@ -19,3 +20,19 @@ Esses dados representarão a camada `raw`, ou camada de dados brutos.
 ### Camada Bronze
 
 Nessa etapa, os arquivos `.csv` armazenados no **Google Cloud Storage** são carregados como tabelas no Google **BigQuery**, preservando sua estrutura original.
+
+### Camada Silver
+
+Na camada Silver são aplicadas as transformações necessárias nos dados para garantir a qualidade, consistência e organização dos dados.
+
+As transformações realizadas foram:
+
+- **Limpeza:** remoção de registros inconsistentes (**-1** e **NULL**) na avaliação dos filmes.
+- **Padronização dos tipos:** conversão das colunas para tipos adequados.
+- **Modelagem:** organização dos dados em uma estrutura com tabelas dimensão e fato.
+    - as informações de **título e ano do filme** originalmente consolidadas em uma única coluna, foram separadas em colunas distintas.
+    - a coluna de **gêneros**, que originalmente estava armazenada como uma string delimitada por `"|"`, foi transformada em uma tabela de dimensão e uma tabela de relacionamento entre filmes e gêneros.
+
+<img src="./img/modelagem.png">
+
+As consultas SQL responsáveis pela criação dessas tabelas podem ser encontradas no diretório: `/sql/silver/`
