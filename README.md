@@ -1,12 +1,15 @@
 # MovieLens
 
-Nesse projeto é efetuado a coleta, o armazenamento e o processamento de dados de filmes para o desenvolvimento de análises e dashboards.
+**Desafio técnico 01 — Case real com BigQuery e Metabase** lançado como comunidade [Dados Por Todos](https://www.instagram.com/dadosportodos) com o objetivo de incentivar o aprendizado prático.
+
+Nesse projeto é desenvolvido um pipeline de dados completo, incluindo a coleta, o armazenamento e o processamento de dados de filmes para o desenvolvimento de análises e dashboards.
 
 ## Etapas do projeto
 - [Coleta](#coleta)
 - [Camada Bronze](#camada-bronze)
 - [Camada Silver](#camada-silver)
 - [Camada Gold](#camada-gold)
+- [Dashboard Analítico](#dashboard-analítico)
 
 <img src="./img/arquitetura.png">
 
@@ -52,3 +55,25 @@ Principais views:
 - `vw_genre_performance` - Métricas agregadas das avaliações dos gêneros filmes (total, média, desvio padrão).
 
 As consultas SQL responsáveis pela criação dessas vies podem ser encontradas no diretório: `/sql/gold/`
+
+### Dashboard Analítico
+
+Utilizando das views da camada analítica foi desenvolvido as seguintes visualizações:
+
+- KPIs Gerais
+    - Total de Usuários
+    - Total de Filmes
+    - Total de Avaliações
+- Métricas de Filmes
+    - Top 10 por Total de Avaliações
+    - Top 10 por Média de Avaliação
+    - Gráfico de Dispersão Popularidade X Qualidade 
+- Métricas de Gêneros dos Filmes
+    - Top 10 por Média de Avaliação
+    - Gráfico de Dispersão Popularidade X Qualidade 
+- Métricas Gerais
+    - Mapa de Calor da quantidade de avaliações ao longo do tempo
+    - Tabela com métricas agregadas das atividades dos usuários
+
+![alt text](image.png)
+![alt text](image-1.png)
