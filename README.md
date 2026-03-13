@@ -2,16 +2,30 @@
 
 **Desafio técnico 01 — Case real com BigQuery e Metabase** lançado como comunidade [Dados Por Todos](https://www.instagram.com/dadosportodos) com o objetivo de incentivar o aprendizado prático.
 
-Nesse projeto é desenvolvido um pipeline de dados completo, incluindo a coleta, o armazenamento e o processamento de dados de filmes para o desenvolvimento de análises e dashboards.
+Pipeline de dados completo desenvolvido a partir do dataset MovieLens, com ingestão, processamento e modelagem analítica utilizando Google Cloud Platform e visualização no Metabase.
 
 ## Etapas do projeto
+- [Arquitetura](#arquitetura)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Coleta](#coleta)
 - [Camada Bronze](#camada-bronze)
 - [Camada Silver](#camada-silver)
 - [Camada Gold](#camada-gold)
 - [Dashboard Analítico](#dashboard-analítico)
 
+### Arquitetura
+
+O pipeline segue uma arquitetura moderna de dados baseada em camadas de processamento, separando responsabilidades entre ingestão, tratamento e consumo analítico.
+
 <img src="./img/arquitetura.png">
+
+### Tecnologias Utilizadas
+
+- **Google Cloud Storage**
+- **BigQuery**
+- **SQL**
+- **Metabase**
+- **Docker**
 
 ### Coleta
 
@@ -65,15 +79,15 @@ Utilizando das views da camada analítica foi desenvolvido as seguintes visualiz
     - Total de Filmes
     - Total de Avaliações
 - Métricas de Filmes
-    - Top 10 por Total de Avaliações
-    - Top 10 por Média de Avaliação
-    - Gráfico de Dispersão Popularidade X Qualidade 
-- Métricas de Gêneros dos Filmes
-    - Top 10 por Média de Avaliação
-    - Gráfico de Dispersão Popularidade X Qualidade 
-- Métricas Gerais
-    - Mapa de Calor da quantidade de avaliações ao longo do tempo
-    - Tabela com métricas agregadas das atividades dos usuários
+    - Top 10 por **Total de Avaliações**
+    - Top 10 por **Média de Avaliação**
+    - Gráfico de Dispersão **Popularidade vs Qualidade** 
+- Métricas de Gêneros
+    - Top 10 por **Média de Avaliação**
+    - Gráfico de Dispersão **Popularidade vs Qualidade** 
+- Métricas de Atividade
+    - **Mapa de Calor temporal** de avaliações
+    - Tabela com métricas agregadas dos usuários
 
 ![alt text](image.png)
 ![alt text](image-1.png)
