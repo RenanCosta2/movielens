@@ -6,6 +6,7 @@ Nesse projeto é efetuado a coleta, o armazenamento e o processamento de dados d
 - [Coleta](#coleta)
 - [Camada Bronze](#camada-bronze)
 - [Camada Silver](#camada-silver)
+- [Camada Gold](#camada-gold)
 
 <img src="./img/arquitetura.png">
 
@@ -36,3 +37,18 @@ As transformações realizadas foram:
 <img src="./img/modelagem.png">
 
 As consultas SQL responsáveis pela criação dessas tabelas podem ser encontradas no diretório: `/sql/silver/`
+
+### Camada Gold
+
+A partir das tabelas estruturadas na camada Silver, esta camada armazena um conjunto de **views analíticas** contendo métricas agregadas e estruturas de dados preparadas para consumo. Essas views são projetadas para facilitar a análise e a integração com ferramentas de BI.
+
+Principais views:
+
+- `vw_movie_kpis` - Métricas agregadas das avaliações dos filmes (total, média, desvio padrão).
+- `vw_top_movies` - Melhores filmes bom base na média das avaliações.
+- `vw_ratings_heatmap` - Avaliações ao longo do tempo.
+- `vw_scatter_popularity_vs_quality` - Métricas de média e total de avaliações dos filmes para fim de comparação.
+- `vw_user_activity` - Métricas de atividade dos usuários.
+- `vw_genre_performance` - Métricas agregadas das avaliações dos gêneros filmes (total, média, desvio padrão).
+
+As consultas SQL responsáveis pela criação dessas vies podem ser encontradas no diretório: `/sql/gold/`
