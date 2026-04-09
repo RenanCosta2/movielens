@@ -89,5 +89,5 @@ Utilizando das views da camada analítica foi desenvolvido as seguintes visualiz
     - **Mapa de Calor temporal** de avaliações
     - Tabela com métricas agregadas dos usuários
 
-![alt text](image.png)
-![alt text](image-1.png)
+![alt text](img/dashboard-1.png)
+![alt text](img/dashboard-2.png)
